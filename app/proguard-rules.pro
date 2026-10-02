@@ -1,0 +1,6 @@
+-keep class com.github.luben.zstd.** { *; }
+-keep class net.lingala.zip4j.** { *; }
+-keep class com.github.junrar.** { *; }
+-dontwarn org.brotli.**
+-dontwarn org.objectweb.asm.**
+-dontwarn org.tukaani.xz.**

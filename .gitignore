@@ -1,0 +1,45 @@
+# Gradle and Kotlin
+.gradle/
+.kotlin/
+build/
+**/build/
+
+# Android Studio and local SDK state
+.idea/
+*.iml
+local.properties
+captures/
+.navigation/
+
+# Native build intermediates
+.externalNativeBuild/
+.cxx/
+obj/
+
+# Signing material and local release configuration
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+signing.properties
+
+# Generated packages and diagnostics
+*.apk
+*.aab
+*.ap_
+*.log
+*.hprof
+local-test-data/
+release-artifacts/
+
+# Editors and operating systems
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
