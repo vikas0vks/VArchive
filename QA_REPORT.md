@@ -1,4 +1,4 @@
-# VArchive 1.0.0 QA report
+# VArchive 1.0.1 QA report
 
 **Date:** 2026-10-02 (Asia/Calcutta)  
 **Device:** Xiaomi/Poco 22101320I (Poco X5 Pro 5G)  
@@ -19,6 +19,7 @@
 | Release install | PASS |
 | Release cold launch | PASS |
 | Post-SAF-permission cold launch | PASS |
+| Adaptive launcher icon and in-app branding | PASS |
 | Filtered AndroidRuntime/WorkManager error log | Clean |
 
 Commands used:
@@ -35,6 +36,7 @@ adb install -r app\build\outputs\apk\release\app-release.apk
 The connected-device suite executed against the actual Android runtime:
 
 - app launch, Home, Files, Settings, About, and creator branding;
+- full-color adaptive launcher icon, splash resource, Home logo, About logo, and v1.0.1 version presentation;
 - ZIP, 7Z, TAR, TAR.GZ, TAR.BZ2, TAR.XZ, TAR.ZST, GZIP, BZIP2, XZ, and ZSTD create/test/extract round trips;
 - AES-256 ZIP correct-password extraction and wrong-password domain failure;
 - corrupt ZIP rejection without process crash;
@@ -68,7 +70,7 @@ Using `/sdcard/Download/VArchiveTest/` only:
 
 | Artifact | Size | SHA-256 |
 |---|---:|---|
-| `app/build/outputs/apk/debug/app-debug.apk` | 21,319,854 bytes | `D1AB1D7762BC78D4348D25BF136BAF472C8371E2ABE5D53D76E6248764BC4373` |
-| `app/build/outputs/apk/release/app-release.apk` | 2,620,524 bytes | `D7CF6BBC0C94C8B60A364DEC70C14E474306CCE502957F691C54D9021B0F06CE` |
+| `app/build/outputs/apk/debug/app-debug.apk` | 21,800,987 bytes | `0F29BC2D08EFEAE29060949EF04D8083ECAFC18E3931DF7EBE89033BFFB9F4F9` |
+| `app/build/outputs/apk/release/app-release.apk` | 2,739,500 bytes | `C5AC15E79B6E363D9B9DD323A632597E3393E827B145CCC0473F2D705470C712` |
 
-The release is R8/resource-shrunk, arm64-v8a-only, and signed with the local Android development key. It is installable for testing but must be signed with a protected production key before store distribution.
+The release is R8/resource-shrunk, arm64-v8a-only, signature-verified, and directly installable as the official VArchive Stable APK.

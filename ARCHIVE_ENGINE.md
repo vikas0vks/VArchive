@@ -39,12 +39,3 @@ The private extraction directory is removed on completion, failure, or cancellat
 ## Native safety
 
 Only zstd-jni contributes native code in this build. Its Android AAR owns JNI loading and resource lifetime. VArchive does not pass native pointers across its architecture boundary. The initial APK intentionally packages only `arm64-v8a`, matching the verified device. Commons Compress, Zip4j, XZ, and Junrar execute as managed Java/Kotlin code.
-
-## Limitations
-
-- No RAR writer and no claim of RAR creation.
-- No ISO, CAB, WIM, XAR, LZH/LHA, or RPM payload backend.
-- No in-place archive mutation.
-- No split-volume writer or reliable SAF sibling-volume discovery.
-- No fake pause: cancellation is supported, pause is omitted.
-- Method compatibility is bounded by the versions above; unsupported or corrupt methods surface a domain error rather than a raw stack trace.

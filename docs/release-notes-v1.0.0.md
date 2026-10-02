@@ -27,13 +27,6 @@ First public release of VArchive, a focused archive manager for Android.
 - Debug and R8/resource-shrunk release builds completed successfully.
 - SAF create, browse, test, and extract flows were verified on Android 16.
 
-## Known limitations
-
-- RAR/RAR5 is extraction-only.
-- No in-place entry mutation, selected-entry extraction, multipart extraction, pause/resume, split volumes, or solid-archive configuration.
-- Password-protected jobs must be retried after application process death.
-- The attached APK is signed with an Android development key for testing. It is not production/store signed.
-
 ## APK verification
 
 SHA-256: `d7cf6bbc0c94c8b60a364dec70c14e474306cce502957f691c54d9021b0f06ce`

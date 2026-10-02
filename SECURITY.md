@@ -10,7 +10,7 @@ Include the affected VArchive version, Android version, archive format, minimal 
 
 Useful reports include archive path traversal, unsafe link handling, archive-bomb control bypasses, unintended file overwrite, password persistence, malformed-archive crashes, and Storage Access Framework boundary violations.
 
-VArchive is a local archive utility and does not request the Android internet permission. Reports about unsupported formats or documented limitations are not security vulnerabilities unless they cross a stated trust boundary.
+VArchive is a local archive utility and does not request the Android internet permission. Unsupported-format reports are not security vulnerabilities unless they cross a stated trust boundary.
 
 ## Supported version
 

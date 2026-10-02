@@ -10,6 +10,7 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.combinedClickable
@@ -120,6 +121,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -131,6 +133,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.work.WorkInfo
 import com.vikas.varchive.BuildConfig
+import com.vikas.varchive.R
 import com.vikas.varchive.archive.ArchiveEntry
 import com.vikas.varchive.archive.ArchiveFormat
 import com.vikas.varchive.archive.CompressionLevel
@@ -378,8 +381,12 @@ private fun HomeScreen(
                 shape = RoundedCornerShape(28.dp),
             ) {
                 Column(Modifier.padding(24.dp)) {
-                    Icon(Icons.Default.Archive, null, Modifier.size(42.dp), tint = MaterialTheme.colorScheme.primary)
-                    Spacer(Modifier.height(16.dp))
+                    Image(
+                        painter = painterResource(R.drawable.varchive_logo_display),
+                        contentDescription = "VArchive logo",
+                        modifier = Modifier.size(78.dp),
+                    )
+                    Spacer(Modifier.height(10.dp))
                     Text("Archives, under control.", style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                     Text("Create, inspect and extract without leaving Android's secure storage model.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = .78f))
                 }
@@ -654,7 +661,13 @@ private fun SimpleSetting(title: String, subtitle: String, icon: ImageVector, on
 private fun AboutDialog(onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        icon = { Icon(Icons.Default.Archive, null, Modifier.size(44.dp), tint = MaterialTheme.colorScheme.primary) },
+        icon = {
+            Image(
+                painter = painterResource(R.drawable.varchive_logo_display),
+                contentDescription = "VArchive logo",
+                modifier = Modifier.size(104.dp),
+            )
+        },
         title = { Text("VArchive") },
         text = {
             Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -708,7 +721,7 @@ private fun LicensesDialog(onDismiss: () -> Unit) {
                 item { LicenseItem("XZ for Java 1.12", "0BSD") }
                 item { LicenseItem("zstd-jni 1.5.7-12", "BSD 2-Clause; bundled Zstandard is BSD 3-Clause or GPL-2.0") }
                 item { LicenseItem("Junrar 8.1.1", "UnRAR License; extraction only, RAR creation is prohibited and not implemented") }
-                item { Text("Full integration and limitation details are included in ARCHIVE_ENGINE.md.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant) }
+                item { Text("Full engine and license details are included in ARCHIVE_ENGINE.md.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant) }
             }
         },
         confirmButton = { TextButton(onClick = onDismiss) { Text("Done") } },

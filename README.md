@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/images/varchive-logo.png" alt="VArchive logo" width="170" />
+
 # VArchive
 
 ### A modern, secure and powerful archive manager for Android.
@@ -37,7 +39,7 @@ VArchive brings browsing, creation, extraction, and integrity testing into one f
   <img src="docs/images/settings.png" alt="VArchive settings screen" width="30%" />
 </p>
 
-Screenshots are captured from the real v1.0.0 application on Android 16 using neutral test data.
+Screenshots are captured from the real v1.0.1 application on Android 16 using neutral test data.
 
 ## Supported formats
 
@@ -107,7 +109,7 @@ Download the latest installable APK from [GitHub Releases](https://github.com/vi
 - Current packaged ABI: **arm64-v8a**
 - Package name: **`com.vikas.varchive`**
 
-The v1.0.0 release APK is signed with an Android development key for testing and direct installation. It is not production/store signed. Verify the accompanying `.sha256` file before installing.
+**VArchive v1.0.1 Stable** is the official signed GitHub release and is ready for direct installation and everyday use. Verify the accompanying `.sha256` file before installing.
 
 ## Build from source
 
@@ -131,7 +133,7 @@ cd VArchive
 .\gradlew.bat testDebugUnitTest lintDebug assembleDebug
 ```
 
-Build outputs are written beneath `app/build/outputs/apk/`. A release build can be created with `./gradlew assembleRelease`; the checked-in configuration uses the development key and contains no private signing material.
+Build outputs are written beneath `app/build/outputs/apk/`. A release build can be created with `./gradlew assembleRelease`; the repository contains no private signing material.
 
 ## Tech stack
 
@@ -148,7 +150,7 @@ Dependency roles and license boundaries are documented in [THIRD_PARTY_NOTICES.m
 
 ## Testing
 
-Current v1.0.0 validation includes:
+Current v1.0.1 validation includes:
 
 - **19 JVM unit/integration tests** covering detection, options, path safety, bomb limits, encryption, corruption, and archive round trips;
 - **4 Android instrumentation tests** covering core UI, Android-runtime codec round trips, encrypted/corrupt archive handling, and RAR5 extraction;
@@ -163,17 +165,7 @@ Run the connected-device suite with:
 ./gradlew connectedDebugAndroidTest
 ```
 
-The detailed v1.0.0 evidence is available in [QA_REPORT.md](QA_REPORT.md).
-
-## Known limitations
-
-- No in-place archive entry update or deletion.
-- No entry preview/open or selected-entry extraction; extraction currently processes the whole archive.
-- No multipart extraction, split-volume creation, or solid-archive configuration.
-- No resumable pause; cancellation is cooperative and real.
-- Empty source directories are not emitted when compressing a folder.
-- Password-protected queued jobs must be retried if Android kills the application process.
-- Current release signing is for development/testing, not store distribution.
+The detailed v1.0.1 evidence is available in [QA_REPORT.md](QA_REPORT.md).
 
 ## Open source licenses
 

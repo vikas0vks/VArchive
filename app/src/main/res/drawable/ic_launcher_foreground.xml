@@ -1,7 +1,5 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp" android:height="108dp"
-    android:viewportWidth="108" android:viewportHeight="108">
-    <path android:fillColor="#D5FFFA" android:pathData="M26,28h56v52h-56z" />
-    <path android:fillColor="#087775" android:pathData="M26,28h56v13h-56z" />
-    <path android:fillColor="#087775" android:pathData="M39,49l15,23l15,-23h-10l-5,9l-5,-9z" />
-</vector>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:antialias="true"
+    android:filter="true"
+    android:gravity="fill"
+    android:src="@drawable/varchive_logo_mark" />
